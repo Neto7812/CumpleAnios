@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Estás invitado!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- ESTILOS GENERALES --- */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            /* Gris Ninja */
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Bangers', cursive;
+            /* Fuente estilo cómic */
+            letter-spacing: 2px;
+        }
+
+        /* --- SECCIÓN 1: HEADER --- */
+        .header {
+            background-color: #F85C00;
+            /* Naranja Naruto */
+            padding: 40px 20px;
+            border-bottom: 5px solid #000;
+        }
+
+        .symbol {
+            font-size: 50px;
+            background: #fff;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            color: #F85C00;
+            margin: 0 auto 15px;
+            border: 3px solid #000;
+        }
+
+        /* --- SECCIÓN 2: DATOS --- */
+        .content {
+            padding: 40px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #2b2b2b;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #F85C00;
+            /* Borde naranja a la izquierda */
+            margin-bottom: 20px;
+        }
+
+        /* --- BOTONES (Call to Action) --- */
+        .btn {
+            display: inline-block;
+            background-color: #F85C00;
+            color: black;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-family: 'Bangers', cursive;
+            font-size: 20px;
+            border-radius: 30px;
+            transition: transform 0.2s;
+            margin-top: 10px;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            /* Efecto al pasar el mouse */
+            background-color: #fff;
+            color: #F85C00;
+        }
+
+        .ninja-text {
+            color: #ccc;
+            font-style: italic;
+        }
+
+
+        --Musica
+
+        /* --- WIDGET FLOTANTE (ESTILO MESSENGER) --- */
+        .messenger-widget {
+            position: fixed;
+            /* Se clava en la pantalla, no se mueve al hacer scroll */
+            bottom: 20px;
+            /* Margen desde abajo */
+            right: 20px;
+            /* Margen desde la derecha */
+            z-index: 9999;
+            /* IMPORTANTE: Esto lo pone ENCIMA de todo el sitio */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            /* Alinea todo a la derecha */
+            gap: 15px;
+            /* Espacio entre el botón y el reproductor */
+        }
+
+        /* La burbuja del reproductor */
+        .spotify-bubble {
+            display: none;
+            /* Oculto al principio */
+            width: 300px;
+            /* Ancho fijo para que no se vea enorme */
+            background-color: #000;
+            /* Fondo negro para que resalte */
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+            /* Sombra fuerte para efecto 3D */
+            border: 2px solid #F85C00;
+            /* Borde naranja ninja */
+            overflow: hidden;
+
+            /* Animación de entrada suave */
+            animation: slideUp 0.3s ease-out;
+        }
+
+        /* El botón redondo */
+        .fab-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #F85C00;
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(248, 92, 0, 0.5);
+            transition: transform 0.2s, background-color 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fab-btn:hover {
+            transform: scale(1.1);
+            background-color: #d14e00;
+        }
+
+        /* Animación para que aparezca subiendo */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Ajuste para celulares (para que no tape toda la pantalla) */
+        @media (max-width: 400px) {
+            .spotify-bubble {
+                width: 260px;
+                /* Un poco más chico en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="symbol">生</div>
+        <h1>¡MISIÓN DE RANGO S!</h1>
+        <p>    </p>
+        <p>¡El cumpleaños de Neto!</p>
+    </div>
+
+    <div class="content">
+
+        <div class="messenger-widget">
+
+            <div class="spotify-bubble" id="spotifyBubble">
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/track/1di1C0QI6Y92yZPYn6XYAZ?utm_source=generator" width="100%"
+                    height="152" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
+
+            <button class="fab-btn" onclick="toggleMessenger()" id="fabBtn">
+                🎵
+            </button>
+        </div>
+
+        <h2>¡Atención Shinobi!</h2>
+
+        <p>
+            Has sido seleccionado para asistir a una celebración legendaria.
+            Habrá comida, bebida y pos ya.
+        </p>
+
+        <p class="ninja-text">
+            “Si los compañeros en los que confías se reúnen a tu alrededor, la esperanza puede tomar forma física y
+            hacerse visible. Eso es lo que creo.” (Kakashi Hatake)
+        </p>
+        <br>
+
+        <hr style="border-color: #444; margin: 30px 0;">
+
+        <div class="card">
+            <h3>📍 UBICACIÓN</h3>
+            <p>Aldea Oculta donde se moja la Sal (ixtapaluca xD)<br>(Calle Hidalgo 17C, Ixtapaluca Centro)</p>
+            <a href="https://maps.app.goo.gl/PRSLWvpiJ8vDiEFV7" target="_blank" style="color: #F85C00;">Ver en Mapa</a>
+        </div>
+
+        <div class="card">
+            <h3>📅 FECHA Y HORA</h3>
+            <p>Viernes, 12 de Diciembre 2025</p>
+            <p>A partir de las 05:30 PM</p>
+        </div>
+
+        <div class="card">
+            <h3>Regalos Recomendados</h3>
+            <a href="https://wa.me/525512345678?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tu%20cumpleaños%20ninja"
+                class="btn">
+                Ver
+            </a>
+        </div>
+
+        <br>
+        <h3>¿Confirmas tu asistencia?</h3>
+        <a href="https://wa.me/525591457712?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tu%20cumpleaños%20ninja"
+            class="btn">
+            CONFIRMAR AHORA
+        </a>
+
+    </div>
+
+    <div style="padding: 20px; color: #555; font-size: 12px;">
+        Creado con el estilo del Camino Ninja
+    </div>
+
+    <script>
+        function toggleMessenger() {
+            var bubble = document.getElementById("spotifyBubble");
+            var btn = document.getElementById("fabBtn");
+
+            if (bubble.style.display === "block") {
+                // Si está visible, lo ocultamos
+                bubble.style.display = "none";
+                btn.innerHTML = "🎵"; // Volvemos al icono de música
+                btn.style.backgroundColor = "#F85C00"; // Color naranja original
+            } else {
+                // Si está oculto, lo mostramos
+                bubble.style.display = "block";
+                btn.innerHTML = "X"; // Icono de cerrar (X)
+                btn.style.backgroundColor = "#333"; // Cambiamos a gris oscuro para indicar "cerrar"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
