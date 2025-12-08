@@ -9,7 +9,6 @@
         rel="stylesheet">
 
     <style>
-        /* --- ESTILOS GENERALES --- */
         body {
             margin: 0;
             padding: 0;
@@ -24,14 +23,11 @@
         h2,
         h3 {
             font-family: 'Bangers', cursive;
-            /* Fuente estilo cómic */
             letter-spacing: 2px;
         }
 
-        /* --- SECCIÓN 1: HEADER --- */
         .header {
             background-color: #F85C00;
-            /* Naranja Naruto */
             padding: 40px 20px;
             border-bottom: 5px solid #000;
         }
@@ -48,7 +44,6 @@
             border: 3px solid #000;
         }
 
-        /* --- SECCIÓN 2: DATOS --- */
         .content {
             padding: 40px 20px;
             max-width: 600px;
@@ -60,11 +55,9 @@
             padding: 20px;
             border-radius: 10px;
             border-left: 5px solid #F85C00;
-            /* Borde naranja a la izquierda */
             margin-bottom: 20px;
         }
 
-        /* --- BOTONES (Call to Action) --- */
         .btn {
             display: inline-block;
             background-color: #F85C00;
@@ -94,44 +87,30 @@
 
         --Musica
 
-        /* --- WIDGET FLOTANTE (ESTILO MESSENGER) --- */
         .messenger-widget {
             position: fixed;
-            /* Se clava en la pantalla, no se mueve al hacer scroll */
             bottom: 20px;
-            /* Margen desde abajo */
             right: 20px;
-            /* Margen desde la derecha */
             z-index: 9999;
-            /* IMPORTANTE: Esto lo pone ENCIMA de todo el sitio */
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            /* Alinea todo a la derecha */
             gap: 15px;
-            /* Espacio entre el botón y el reproductor */
         }
 
         /* La burbuja del reproductor */
         .spotify-bubble {
             display: none;
-            /* Oculto al principio */
             width: 300px;
-            /* Ancho fijo para que no se vea enorme */
             background-color: #000;
-            /* Fondo negro para que resalte */
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
-            /* Sombra fuerte para efecto 3D */
             border: 2px solid #F85C00;
-            /* Borde naranja ninja */
             overflow: hidden;
 
-            /* Animación de entrada suave */
             animation: slideUp 0.3s ease-out;
         }
 
-        /* El botón redondo */
         .fab-btn {
             width: 60px;
             height: 60px;
@@ -153,7 +132,6 @@
             background-color: #d14e00;
         }
 
-        /* Animación para que aparezca subiendo */
         @keyframes slideUp {
             from {
                 opacity: 0;
@@ -166,11 +144,9 @@
             }
         }
 
-        /* Ajuste para celulares (para que no tape toda la pantalla) */
         @media (max-width: 400px) {
             .spotify-bubble {
                 width: 260px;
-                /* Un poco más chico en pantallas pequeñas */
             }
         }
     </style>
@@ -256,15 +232,13 @@
             var btn = document.getElementById("fabBtn");
 
             if (bubble.style.display === "block") {
-                // Si está visible, lo ocultamos
                 bubble.style.display = "none";
-                btn.innerHTML = "🎵"; // Volvemos al icono de música
-                btn.style.backgroundColor = "#F85C00"; // Color naranja original
+                btn.innerHTML = "🎵"; 
+                btn.style.backgroundColor = "#F85C00"; 
             } else {
-                // Si está oculto, lo mostramos
                 bubble.style.display = "block";
-                btn.innerHTML = "X"; // Icono de cerrar (X)
-                btn.style.backgroundColor = "#333"; // Cambiamos a gris oscuro para indicar "cerrar"
+                btn.innerHTML = "X"; 
+                btn.style.backgroundColor = "#333";
             }
         }
     </script>
@@ -273,3 +247,4 @@
 
 
 </html>
+
